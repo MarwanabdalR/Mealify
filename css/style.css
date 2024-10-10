@@ -1,0 +1,310 @@
+/*  Standers */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.clr {
+    clear: both;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+a,
+a:active,
+a:hover,
+input:focus {
+    outline: 0 none;
+    text-decoration: none;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: "Amatic SC", sans-serif;
+    font-style: normal;
+    /* height: 100000px; */
+}
+
+
+/* =================================== */
+
+/* nav-bar */
+
+.nav-bar{
+    position: fixed;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.nav-bar .container {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    
+}
+
+.nav-bar .container .logo h1 a {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 400;
+    font-style: normal;
+    color: black;
+}
+
+.nav-bar .container .nav-content ul li {
+    display: inline-block;
+}
+
+.nav-bar .container .nav-content ul li a {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: rgb(127, 127, 144);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 15px;
+    transition-duration: 0.3s;
+    position: relative;
+}
+
+.nav-bar .container .nav-content ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    left: 12px;
+    bottom: -3px;
+    transition: width 0.3s ease;
+}
+
+.nav-bar .container .nav-content ul li a:hover::after {
+    width: 70%;
+}
+
+.nav-bar .container .nav-content ul li a:hover{
+    color: black;
+}
+
+
+/* ========================================== */
+/* HOME */
+
+.home{
+    background-color: rgb(238, 238, 238);
+    color: black;
+    padding: 200px 0;
+}
+
+.home .container .home-content h2{
+    color: rgb(55, 55, 63);
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+
+.home .container .home-content p{
+    color: rgb(79, 79, 90);
+    font-size: 25px;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 30px;
+}
+
+.home-content{
+    width: 40%;
+    margin: 45px 30px;
+    position: relative;
+    top: 100px;
+}
+
+.home-img {
+    width: 55%;
+}
+
+.home-img img {
+    width: 80%;
+    animation: none;
+    transition: transform 0.2s;
+}
+
+/* Apply hover animation to the home-img img */
+.home-img img:hover {
+    animation: movePlate 0.3s ease-in-out infinite; /* Trigger keyframe animation on hover */
+}
+
+/* Keyframe animation */
+@keyframes movePlate {
+    0% {
+        transform: translateX(-2px)  rotate(0deg);
+    }
+    25% {
+        transform: translateX(2px) rotate(3deg);
+    }
+    50% {
+        transform: translateX(-2px) rotate(0deg);
+    }
+    75% {
+        transform: translateX(2px) rotate(-3deg); 
+    }
+    100% {
+        transform: translateX(-2px) rotate(0deg); 
+    }
+}
+
+
+.home .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.home .container .home-content .btn-group{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    gap: 50px;
+    font-size: 22px;
+}
+
+.home .container .home-content .btn-group .f-btn{
+    color: white;
+    background-color: red;
+    padding: 10px 25px;
+    border-radius: 0 100vh 100vh;
+}
+
+.home .container .home-content .btn-group .s-btn{
+    color: black;
+    padding: 10px 25px;
+}
+
+/* .home .container .home-content .btn-group .s-btn i{
+    border-radius: ;
+} */
+
+
+.video-button {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    top: 17px;
+}
+
+.video-button:hover {
+    color: red;
+}
+
+.icon-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.semi-circle {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    clip-path: inset(0 50% 0 0);
+}
+
+.white-circle {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-circle i {
+    color: black;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .nav-bar .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-bar .container .nav-content ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .nav-bar .container .nav-content ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-bar .container .nav-content ul li a {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .nav-bar .container .logo h1 a {
+        font-size: 24px;
+    }
+
+    .nav-bar .container .nav-content ul li a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .nav-bar .container .nav-content ul {
+        margin-top: 10px;
+    }
+
+    .fa-moon {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+}
